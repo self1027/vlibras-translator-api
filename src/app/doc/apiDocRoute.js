@@ -9,7 +9,7 @@ const options = {
 
 const apiDocRoute = Router();
 
-apiDocRoute.use('/', swaggerUi.serve);
+apiDocRoute.use('/docs', swaggerUi.serveFiles(swaggerDoc, options));
 apiDocRoute.get('/docs', swaggerUi.setup(swaggerDoc, options));
 
 export default apiDocRoute;
